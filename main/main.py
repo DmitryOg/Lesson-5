@@ -5,7 +5,7 @@ import file_operation
 from faker import Faker
 import random
 import os
-import __main__
+
 
 
 
