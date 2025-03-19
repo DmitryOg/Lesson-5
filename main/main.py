@@ -1,4 +1,3 @@
-from nt import mkdir
 import file_operation
 from faker import Faker
 import random
@@ -6,7 +5,7 @@ import os
 
 
 def main():
-    os.makedirs('characters', 0o770, False )
+    os.makedirs('characters', 0o770, True)
     a = 0
     while a < 10:
         fake = Faker("ru_Ru")
@@ -79,14 +78,15 @@ def main():
             'Я': 'Я̋',
             ' ': ' '
         }
-        skills = ["Стремительный прыжок",
-                  "Электрический выстрел",
-                  "Ледяной удар",
-                  "Стремительный удар",
-                  "Кислотный взгляд",
-                  "Тайный побег",
-                  "Ледяной выстрел",
-                  "Огненный заряд"
+        skills = [
+            "Стремительный прыжок",
+            "Электрический выстрел",
+            "Ледяной удар",
+            "Стремительный удар",
+            "Кислотный взгляд",
+            "Тайный побег",
+            "Ледяной выстрел",
+            "Огненный заряд"
         ]
 
         new_skills = []
@@ -115,7 +115,7 @@ def main():
             "skill_3": random_skills[2],
         }
         a += 1
-        (file_operation.render_template("charsheet.svg", "characters/result-" + str(a) + ".svg", context))
+        file_operation.render_template("charsheet.svg", "characters/result-" + str(a) + ".svg", context)
 
 
 if __name__ == '__main__':
